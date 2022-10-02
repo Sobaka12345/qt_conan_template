@@ -17,6 +17,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(PROJECT_BINARY_OUTPUT ${CMAKE_BINARY_DIR}/bin)
 set(PROJECT_LIBRARY_OUTPUT ${CMAKE_BINARY_DIR}/lib)
 
+include(${CMAKE_SOURCE_DIR}/PrecompiledHeader.cmake)
 include(${CMAKE_SOURCE_DIR}/configure_conan.cmake)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Gui)
@@ -24,11 +25,14 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Gui)
 set(PROJECT_SOURCES
 	main.cpp
 	resources/resources.qrc
+    pchheader.cpp
 )
 
 add_executable(${PROJECT_NAME}
     ${PROJECT_SOURCES}
 )
+
+add_precompiled_header(${PROJECT_NAME} pchheader.h SOURCE_CXX pchheader.cpp FORCEINCLUDE)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui)
 

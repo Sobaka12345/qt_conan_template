@@ -8,7 +8,7 @@ include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_configure(REQUIRES qt/6.0.4
                       GENERATORS cmake_find_package
-					  GENERATORS cmake_paths
+					       GENERATORS cmake_paths
                       IMPORTS "bin, *.dll -> ${PROJECT_BINARY_OUTPUT}/"
                       IMPORTS "res/archdatadir/plugins, * -> ${PROJECT_BINARY_OUTPUT}/"
                       OPTIONS qt:shared=True)

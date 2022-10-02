@@ -14,9 +14,9 @@ if [[ ${build_conf} != "debug" ]] && [[ ${build_conf} != "release" ]]; then
 fi;
 shopt -u nocasematch;
 
-mkdir build
+mkdir build &> /dev/null
 cd build
-mkdir $build_conf
+mkdir $build_conf &> /dev/null
 cd $build_conf
 
 python -m venv ./ venv

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5.17)
 
-project(qt_conan_template VERSION 0.1 LANGUAGES CXX)
+get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" PROJECT_NAME ${PROJECT_NAME})
+project(${PROJECT_NAME} VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -24,13 +26,13 @@ set(PROJECT_SOURCES
 	resources/resources.qrc
 )
 
-add_executable(qt_conan_template
+add_executable(${PROJECT_NAME}
     ${PROJECT_SOURCES}
 )
 
-target_link_libraries(qt_conan_template PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui)
 
-set_target_properties(qt_conan_template
+set_target_properties(${PROJECT_NAME}
     PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_LIBRARY_OUTPUT}"
     LIBRARY_OUTPUT_DIRECTORY "${PROJECT_LIBRARY_OUTPUT}"

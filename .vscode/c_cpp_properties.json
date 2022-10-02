@@ -1,0 +1,59 @@
+{
+    "configurations": [
+        {
+            "name": "Linux Debug",
+            "includePath": [
+                "${default}"
+            ],
+            "defines": [
+                "${default}"
+            ],
+            "macFrameworkPath": [
+                "${default}"
+            ],
+            "forcedInclude": [
+                "${default}"
+            ],
+            "compileCommands": "${workspaceFolder}/build/debug/compile_commands.json",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${default}",
+                "path": [
+                    "${default}"
+                ]
+            },
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "compilerPath": "/usr/bin/g++-10"
+        },
+        {
+            "name": "Linux Release",
+            "includePath": [
+                "${default}"
+            ],
+            "defines": [
+                "${default}"
+            ],
+            "macFrameworkPath": [
+                "${default}"
+            ],
+            "forcedInclude": [
+                "${default}"
+            ],
+            "compileCommands": "${workspaceFolder}/build/release/compile_commands.json",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${default}",
+                "path": [
+                    "${default}"
+                ]
+            },
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "compilerPath": "/usr/bin/g++-10"
+        }
+    ],
+    "version": 4
+}

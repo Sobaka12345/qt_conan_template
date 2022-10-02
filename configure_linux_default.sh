@@ -24,4 +24,4 @@ source ./venv/bin/activate
 
 pip3 install conan
 
-cmake ../.. -DCMAKE_BUILD_TYPE=$build_conf -DPROFILE_PATH="../../conan/conan_profile_linux_"$build_conf".txt"
+cmake ../.. -DCMAKE_BUILD_TYPE=$build_conf -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DPROFILE_PATH="../../conan/conan_profile_linux_"$build_conf".txt"
